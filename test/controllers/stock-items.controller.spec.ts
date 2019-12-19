@@ -1,21 +1,19 @@
 import {Application} from 'express';
 import * as request from 'supertest';
 
-import { buildApiServer } from '../helper';
-import { ApiServer } from '../../src/server';
+import {buildApiServer} from '../helper';
 
 describe('stock-item.controller', () => {
 
   let app: Application;
   beforeEach(async () => {
-    const ApiServer = buildApiServer();
+    const apiServer = buildApiServer();
 
-    app = await ApiServer.getApp();
-  }
-  )};
+    app = await apiServer.getApp();
+  });
 
-  test('canary verifies test infratstructure', () => {
-    expect(true).toEqual(true);
+  test('canary verifies test infrastructure', () => {
+     expect(true).toEqual(true);
   });
 
   describe('given GET /stock-items', () => {
@@ -29,5 +27,4 @@ describe('stock-item.controller', () => {
       });
     });
   });
-
-
+});
